@@ -21,7 +21,7 @@ console.log(store.getState())
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
