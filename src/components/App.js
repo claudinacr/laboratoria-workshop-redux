@@ -1,9 +1,27 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 class App extends Component {
   render() {
+    console.log(this.props)
     return (
-      <div>Hello world!</div>
+      <div>
+        Hello World
+      </div>
     )
   }
 }
-export default App
+
+function mapStateToProps(calendar) {
+  return {
+    calendar: Object.keys(calendar)
+      .map((day) => ({
+        day,
+        meals: {...calendar[day]}
+      }))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+)(App)
